@@ -22,17 +22,15 @@ export const StyledMenu = (props) => {
       }}
     >
       {props.items.map((value) => (
-        <MenuItem onClick={props.handleClose}>
-          <NavLink
-            activeClassName='Active'
-            to={{
-              pathname: '/Products',
-              state: { title: value },
-            }}
-          >
-            {value}
-          </NavLink>
-        </MenuItem>
+        <NavLink
+          activeClassName='Active'
+          to={{
+            pathname: '/Products',
+            state: { title: value },
+          }}
+        >
+          <MenuItem onClick={props.handleClose}>{value}</MenuItem>
+        </NavLink>
       ))}
     </Menu>
   );

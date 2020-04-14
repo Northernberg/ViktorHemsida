@@ -5,14 +5,12 @@ import {
   GridList,
   GridListTile,
   GridListTileBar,
+  Button,
 } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
-import image from '../assets/barbeque-painting.jpg';
-import image2 from '../assets/wood-chips.jpg';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import background from '../assets/background.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,28 +34,31 @@ const useStyles = makeStyles((theme) => ({
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   wrapper: {
-    backgroundImage: `url(${background})`,
+    backgroundImage: `url(${'images/background.jpg'})`,
     backgroundSize: 'cover',
     minHeight: '980px',
     backgroundColor: 'white',
     marginRight: '5px',
     margin: 'auto',
   },
+  button: {
+    backgroundColor: 'white',
+  },
 }));
 
 const tileData = [
   {
-    img: image,
+    img: 'images/background.jpg',
     title: 'Barbeque',
     author: 'Google',
   },
   {
-    img: image2,
+    img: 'images/wood-chips.jpg',
     title: 'wood-chips',
     author: 'Google',
   },
   {
-    img: image,
+    img: 'images/barbeque-painting.jpg',
     title: 'Barbeque 2',
     author: 'Google',
   },
@@ -78,8 +79,7 @@ export const Home = (props) => {
           Välkommen till Viktors Grill och Co
         </Typography>
       </Grid>
-
-      <Grid container item xs={4} alignItems='center'>
+      <Grid container item xs={6} alignItems='center'>
         <GridList className={classes.gridList} cols={2.5}>
           {tileData.map((tile) => (
             <GridListTile key={tile.img}>

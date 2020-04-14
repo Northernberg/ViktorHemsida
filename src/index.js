@@ -10,6 +10,7 @@ import { Login } from './views/Login.js';
 import { Route, BrowserRouter } from 'react-router-dom';
 import { Footer } from './components/Footer.js';
 import { makeStyles } from '@material-ui/core/styles';
+import { Checkout } from './views/Checkout.js';
 import { Grid } from '@material-ui/core';
 import 'normalize.css';
 
@@ -28,6 +29,7 @@ const Routing = () => {
     <BrowserRouter>
       <Navbar></Navbar>
       <Sidebar></Sidebar>
+      <Route exact path='/Checkout' component={Checkout} />
       <Route exact path='/Products' component={Products} />
       <Route exact path='/' component={Home} />
       <Route exact path='/Login' component={Login} />

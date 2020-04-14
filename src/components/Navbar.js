@@ -102,7 +102,7 @@ export const Navbar = (props) => {
           </NavLink>
         </li>
         <li>
-          <NavLink exact activeClassName='Active' to='/home'>
+          <NavLink exact activeClassName='Active' to='/checkout'>
             <ShoppingCart fontSize='large'></ShoppingCart>
             <Typography> Kundvagn </Typography>
           </NavLink>

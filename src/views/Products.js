@@ -68,7 +68,7 @@ export const Products = (props) => {
             <Typography align='center'> Product_name</Typography>
           </Grid>
           <Grid item container justify='center'>
-            <Typography align='center'> 3,55 £</Typography>{' '}
+            <Typography align='center'> 35 sek</Typography>{' '}
           </Grid>
           <Grid item container justify='center'>
             <Button variant='contained' color='primary'>

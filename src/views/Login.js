@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Button, TextField, makeStyles, Grid } from '@material-ui/core';
-import { NavLink, Route } from 'react-router-dom';
-import { Registration } from './Registration.js';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    marginRight: '5px',
+    margin: 'auto',
+    padding: '10px',
   },
   textField: {
     maxWidth: 200,
@@ -42,39 +45,39 @@ export const Login = (props) => {
     event.preventDefault();
   }
   return (
-    <Grid Container maxWidth='md'>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit} className={classes.form}>
-        <TextField
-          label='email'
-          type='email'
-          name='email'
-          value={formValues.email}
-          className={classes.textField}
-          onChange={handleChange}
-        ></TextField>
-        <TextField
-          name='password'
-          label='password'
-          type='password'
-          value={formValues.password}
-          className={classes.textField}
-          onChange={handleChange}
-        ></TextField>
-        <Button
-          type='submit'
-          className={classes.textField}
-          color='primary'
-          variant='contained'
-        >
-          Submit
-        </Button>
-        {error && <p class={classes.error}> Wrong username or password </p>}
-        <NavLink activeClassName='Active' to='/register'>
-          Register here
-        </NavLink>
-      </form>
-      <Route path='/register' component={Registration} />
+    <Grid Container xs={12} className={classes.container} wrap='wrap'>
+      <Typography variant='h2' align='center'>
+        Login
+      </Typography>
+      <Grid container xs={12} justify='center'>
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <TextField
+            label='email'
+            type='email'
+            name='email'
+            value={formValues.email}
+            className={classes.textField}
+            onChange={handleChange}
+          ></TextField>
+          <TextField
+            name='password'
+            label='password'
+            type='password'
+            value={formValues.password}
+            className={classes.textField}
+            onChange={handleChange}
+          ></TextField>
+          <Button
+            type='submit'
+            className={classes.textField}
+            color='primary'
+            variant='contained'
+          >
+            Submit
+          </Button>
+          {error && <p class={classes.error}> Wrong username or password </p>}
+        </form>
+      </Grid>
     </Grid>
   );
 };
